@@ -7,6 +7,8 @@
 ### Особенности
 Контроллеры должны быть строго в единственном числе, без пробелов между словами и заканчиваться на «Controller».
 
+Создание CRUD
+php artisan make:controller Api/CountriesController -m Models/Country
 
 
 ## DB
@@ -51,3 +53,9 @@ php artisan make:model Model/Accaunt
 #### Кеширование
 - Lock
 - Rememberable
+
+
+#links
+
+##Convention
+https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions
