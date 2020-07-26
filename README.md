@@ -1,6 +1,52 @@
-# php_note
-Простые важные заметки. 
-## Полезные ссылки:-
-- https://github.com/ziadoz/awesome-php#frameworks
-- https://github.com/alexeymezenin/laravel-best-practices/blob/master/russian.md
-- https://github.com/roistat/php-code-conventions/blob/master/README.md#%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5
+# Laravel
+
+## Blade
+
+## Controllers
+
+### Особенности
+Контроллеры должны быть строго в единственном числе, без пробелов между словами и заканчиваться на «Controller».
+
+
+## DB
+
+### Особенности:
+- может быть несколько DB; 
+- можно использовать мягкое удаление;
+- стоит использовать индексы;
+- создание внешних ключей, лучше делать отдельной миграцией, после создания всех требуемых таблиц;
+- Eloquent has one по умолчанию таблицы
+- lazy загрузка
+
+### Различные команды:
+#### Создание таблицы:
+-таблицы создаются во множественном числе, модели создаются в единичном числе, модель  - представление одной сущности.  
+
+```php
+php artisan make:migration create_construction_types_table
+```
+
+#### Создание Модели
+- модели создаются в единичном числе, модель  - представление одной сущности. Таблицы создаются во множественном числе. 
+- ключ help покажет требуемые поля;
+- можно использовать различные ключи, чтобы создать сразу модель, контроллер и фабрику
+- чтобы поместить в папку Model - "Model/Accaunt"
+
+```php
+php artisan help make:model Accaunt
+```
+
+```php
+php artisan make:model Accaunt
+```
+
+```php
+php artisan make:model Model/Accaunt
+```
+
+#### Создание Сидов
+- при ручном создании сидов надо выполнять  очистку "composer dumpautoload" , для всего, что есть в папке database
+
+#### Кеширование
+- Lock
+- Rememberable
